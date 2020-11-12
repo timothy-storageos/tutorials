@@ -61,7 +61,7 @@ spec:
   resources:
     requests:
     memory: "512Mi"
-    CPU: 1
+    cpu: 1
 #  nodeSelectorTerms:
 #    - matchExpressions:
 #      - key: "node-role.kubernetes.io/worker" # Compute node label will vary according to your installation
