@@ -1,10 +1,10 @@
 {
     "pathwayTitle": "StorageOS",
-    "title": "InfluxDB",
+    "title": "Resize StorageOS Volumes",
     "icon": "fa-storageos",
     "time": "10 minutes",
-    "difficulty": "Beginner",
-    "description": "Learn how to deploy InfluxDB with StorageOS volumes in Kubernetes",
+    "difficulty": "Intermediate",
+    "description": "Learn how to resize StorageOS Volumes",
     "details": {
         "intro": {
             "text": "000-introduction.md",
@@ -17,12 +17,12 @@
                 "text": "010-setup-environment.md"
               },
               {
-                "title": "Installing InfluxDB",
-                "text": "020-deploy-pods-service.md"
+                "title": "Create StatefulSet",
+                "text": "020-create-stateful-set.md"
               },
               {
-                  "title": "Using InfluxDB",
-                  "text": "030-create-query-data.md"
+                  "title": "Resize Volume",
+                  "text": "030-resize-volume.md"
               }
         ],
         "finish": {
