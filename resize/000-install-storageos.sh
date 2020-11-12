@@ -72,7 +72,7 @@ END
 # #        - "true"
 # END
 
-kubectl create -f <<END
+kubectl create -f- <<END
 apiVersion: "storageos.com/v1"
 kind: StorageOSCluster
 metadata:
