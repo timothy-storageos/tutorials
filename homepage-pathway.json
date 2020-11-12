@@ -31,6 +31,13 @@
       "course_id": "influxdb",
       "title": "InfluxDB",
       "description": "Learn how to deploy InfluxDB with StorageOS volumes in Kubernetes"
+    },
+    {
+      "external_link": "https://play.storageos.com/resize",
+      "course_id": "resize",
+      "title": "Resize StorageOS Volumes",
+      "description": "Learn how to perform resize operations on StorageOS Volumes"
     }
+
   ]
 }
