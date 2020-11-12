@@ -10,7 +10,7 @@ Create the Service Account, Service, and StatefulSet from the manifest file.
 
 `kubectl create -f statefulset.yaml`{{execute}}
 
-You should now be able to view the newly-created PVC (further fields to the right are truncated):
+You should now be able to view the newly-created PVC (you will see further fields to the right that are truncated in the output shown below):
 
 `kubectl get pvc`{{execute}}
 
@@ -29,6 +29,3 @@ influxdb-0            1/1     Running       0          5s
 ```
 
 You have now succesfully created a StatefulSet that uses a 20Gi StorageOS PVC. In the next step we will resize this PVC.
-
-NAME              STATUS   VOLUME        CAPACITY
-data-influxdb-0   Bound    <volume-id>   20Gi
