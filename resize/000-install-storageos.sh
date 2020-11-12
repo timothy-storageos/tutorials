@@ -43,10 +43,11 @@ metadata:
 spec:
   secretRefName: "storageos-api" # Reference from the Secret created in the previous step
   secretRefNamespace: "storageos-operator"  # Namespace of the Secret
-  namespace: "kube-system"
+# namespace: "kube-system"
   k8sDistro: "upstream"
   images:
     nodeContainer: "storageos/node:v2.3.0" # StorageOS version
+    kubeSchedulerContainer: "k8s.gcr.io/kube-scheduler:v1.18.8"
   kvBackend:
     address: '${ETCD_HOST}:2379' # Example address, change for your etcd endpoint
   # address: '10.42.15.23:2379,10.42.12.22:2379,10.42.13.16:2379' # You can set ETCD server ips
@@ -60,6 +61,7 @@ spec:
   resources:
     requests:
     memory: "512Mi"
+    CPU: 1
 #  nodeSelectorTerms:
 #    - matchExpressions:
 #      - key: "node-role.kubernetes.io/worker" # Compute node label will vary according to your installation
