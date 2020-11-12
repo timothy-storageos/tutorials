@@ -1,9 +1,8 @@
 To begin with, we will create a StatefulSet that that uses a StorageOS PVC.
-The StatefulSet we are using in this tutorial consists of 1 instance of an
+The StatefulSet we are using in this tutorial consists of an
 InfluxDB application, consuming a 20Gi StorageOS PVC.
 
-We will create a StatefulSet consisting of one InfluxDB container, consuming a
-StorageOS PVC. View the configuration of the StatefulSet as follows:
+View the manifest file for the StatefulSet as follows:
 
 `cat statefulset.yaml`{{execute}} 
 
@@ -11,13 +10,13 @@ Create the Service Account, Service, and StatefulSet from the manifest file.
 
 `kubectl create -f statefulset.yaml`{{execute}}
 
-You should now be able to view the newly-created PVC:
+You should now be able to view the newly-created PVC (further fields to the right are truncated):
 
 `kubectl get pvc`{{execute}}
 
 ```bash
-NAME                  READY   STATUS        RESTARTS   AGE
-data                  1/1     Running       0          5s
+NAME              STATUS   VOLUME        CAPACITY
+data-influxdb-0   Bound    <volume-id>   20Gi
 ```
 
 You should also now be able to view the running pod that consumes the PVC.
@@ -30,3 +29,6 @@ influxdb-0            1/1     Running       0          5s
 ```
 
 You have now succesfully created a StatefulSet that uses a 20Gi StorageOS PVC. In the next step we will resize this PVC.
+
+NAME              STATUS   VOLUME        CAPACITY
+data-influxdb-0   Bound    <volume-id>   20Gi

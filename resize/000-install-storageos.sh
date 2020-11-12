@@ -8,7 +8,7 @@ sleep 5
 ssh node01 -o StrictHostKeyChecking=no wget https://raw.githubusercontent.com/storageos/tutorials/master/ephemeral/assets/install-etcd.sh
 echo ${ETCD_HOST} | ssh node01 bash install-etcd.sh
 
-kubectl create -f https://github.com/storageos/cluster-operator/releases/download/v2.1.0/storageos-operator.yaml
+kubectl create -f https://github.com/storageos/cluster-operator/releases/download/v2.3.0/storageos-operator.yaml
 
 kubectl create -f- <<END
 apiVersion: v1
@@ -46,7 +46,7 @@ spec:
   namespace: "kube-system"
   k8sDistro: "upstream"
   images:
-    nodeContainer: "storageos/node:v2.2.0" # StorageOS version
+    nodeContainer: "storageos/node:v2.3.0" # StorageOS version
   kvBackend:
     address: '${ETCD_HOST}:2379' # Example address, change for your etcd endpoint
   # address: '10.42.15.23:2379,10.42.12.22:2379,10.42.13.16:2379' # You can set ETCD server ips

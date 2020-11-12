@@ -10,11 +10,11 @@ We can view the current size of the volume with the following command:
 
 The value in the `CAPACITY` column should be `20Gi`.
 
-Before we perform the resize operation, we must take the Volume offline, as
-Volumes cannot be resized whilst they are in use. To achieve this, scale the
-StatefulSet down to zero.
+Volumes cannot be resized whilst they are in use. Therefore, before we perform
+the resize operation we must take the Volume offline. To achieve this, scale
+the StatefulSet down to zero.
 
-`kubectl scale statefulsets influxdb --replicas=0`
+`kubectl scale statefulsets influxdb --replicas=0`{{execute}}
 
 Now we are ready to perform the resize operation. Use the edit functionality
 of `kubectl` to open the manifest for modification. It is important to use
@@ -23,11 +23,10 @@ result in the PVC being updated.
 
 `kubectl edit pvc`{{execute}}
 
-This will open the manifest for modification with the `Vim` text editor. Press
-`i` to enter `insert` mode, then use the arrow keys to navigate to the
-`storage` field at the end of the file, and change the value from `20Gi` to
-`30Gi`. Press the `Esc` key followed by `:wq` and the `Enter` key to save and
-quit.
+This will open the manifest for modification with the `Vim` text editor.  use
+the arrow keys to navigate to the `storage` field. Press `i` to enter `insert`
+mode, then change the value from `20Gi` to `30Gi`. Press the `Esc` key
+followed by `:wq` and the `Enter` key to save and quit.
 
 Kubernetes will recognise the change that has been made, and request more
 space, triggering StorageOS to expand the underlying volume. You can verify
