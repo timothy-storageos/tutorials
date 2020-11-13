@@ -38,7 +38,7 @@ The value in the `CAPACITY` column should now have been updated to `30Gi`.
 
 We can now safely scale our StatefulSet back to its original size:
 
-`kubectl scale statefulsets influxdb --replicas=1`
+`kubectl scale statefulsets influxdb --replicas=1`{{execute}}
 
 We can further verify that the underlying volume has been resized by opening a
 shell to the running container and viewing the size of the mounted volume

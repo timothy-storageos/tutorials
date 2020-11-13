@@ -1,4 +1,4 @@
-To begin with, we will create a StatefulSet that that uses a StorageOS PVC.
+To begin with, we will create a StatefulSet that uses a StorageOS PVC.
 The StatefulSet we are using in this tutorial consists of an
 InfluxDB application, deployed on a single container and consuming a 20Gi StorageOS PVC.
 
